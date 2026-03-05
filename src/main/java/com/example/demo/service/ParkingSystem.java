@@ -91,4 +91,28 @@ public class ParkingSystem {
 		return String.valueOf(AmountTobePaid);
 	}
 
+	public List<ParkingSlot> getAllSpots() {
+		// TODO Auto-generated method stub
+		return psRepo.findAll();
+	}
+
+	public List<ParkingSlot> getAllSpotsAvailable() {
+		// TODO Auto-generated method stub
+		return psRepo.findAllByIsAvailableTrue();
+	}
+
+	public ParkingSlot getParkingSlotById(Long id) {
+		// TODO Auto-generated method stub
+		return psRepo.findById(id).get();
+	}
+
+	public void setparkingSlotAvailableById(Long parkingId) {
+		
+		psRepo.setIsAvailableTrueById(parkingId);
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
 }
